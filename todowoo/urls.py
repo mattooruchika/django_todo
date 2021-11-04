@@ -22,11 +22,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # AUTH
-    url(r'signup/', t_views.signup_user,name='signup_user'),
-    url(r'login/', t_views.login_user,name='login_user'),
-    url(r'logout/', t_views.logout_user,name='logout_user'),
+    path('signup/', t_views.signup_user,name='signup_user'),
+    path('login/', t_views.login_user,name='login_user'),
+    path('logout/', t_views.logout_user,name='logout_user'),
 
     # TODOVALS
-    url(r'current/', t_views.currenttodos,name='currenttodos'),
-    url(r'', t_views.home,name='home'),
+    path('', t_views.home,name='home'),
+    path('create/', t_views.createtodos,name='createtodos'),
+    path('current/', t_views.currenttodos,name='currenttodos'),
+    path('completed/', t_views.completedtodos,name='completedtodos'),
+    path('todo/<int:todo_pk>', t_views.viewtodo,name='viewtodo'),
+    path('todo/<int:todo_pk>/complete', t_views.completetodo,name='completetodo'),
+    path('todo/<int:todo_pk>/delete', t_views.deletetodo,name='deletetodo'),
 ]

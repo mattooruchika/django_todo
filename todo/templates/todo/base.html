@@ -7,6 +7,9 @@
             {{ user.as_p }}
             <button type="submit">LOGOUT</button>
     </form>
+    <a href="{% url 'createtodos' %}">CREATE</a>
+    <a href="{% url 'currenttodos' %}">CURRENT</a>
+    <a href="{% url 'completedtodos' %}">COMPLETED</a>
 {% else %}
     <a href="{% url 'signup_user' %}">SIGNUP</a>
     <a href="{% url 'login_user' %}">LOGIN</a>
